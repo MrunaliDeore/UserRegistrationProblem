@@ -12,6 +12,9 @@ public class RegEx {
 
 		System.out.println("Please enter last name:");
 		String lastName = scanner.nextLine();
+//		
+		System.out.println("Please enter email id:");
+		String emailId = scanner.nextLine();
 
 		// validate user input and display error message
 		System.out.println("\nValidate Result:");
@@ -21,18 +24,25 @@ public class RegEx {
 		else
 		if(!validateLastName(lastName))
 			System.out.println("Invalid Last Name");
+		else
+		if(!validateEmailId(emailId))
+			System.out.println("Invalid Email ID");
 
 		else
-			System.out.println("Valid First Name. Thank you.");
+			System.out.println("Valid Input. Thank you.");
 	}
 
-	// validate first name
+//	 validate first name
 	public static boolean validateFirstName(String firstName) {
 		return firstName.matches("[A-Z]{1}[a-z]{3}");
 	}
 
 	private static boolean validateLastName(String lastName) {
 		return lastName.matches("[A-Z]{1}[a-z]{3,6}");
+	}
+	
+	private static boolean validateEmailId(String emailId) {
+		return emailId.matches("[a-z]{3}(.+)[a-z]{3}@[bl](.+)[co](.+)");
 	}
 
 }
