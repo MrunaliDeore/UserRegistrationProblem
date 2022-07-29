@@ -20,7 +20,7 @@ public class RegexPassword {
 //	 validate first name
 	
 	private static boolean validatePassword(String password) {
-		return password.matches("[A-Z]{1}[a-z]{8}[0-9]{1}");
+		return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
 	}
 
 }
